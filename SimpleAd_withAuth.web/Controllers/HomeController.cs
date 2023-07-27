@@ -63,7 +63,7 @@ namespace SimpleAd_withAuth.web.Controllers
 
             var vm = new AccountViewModel
             {
-                AllAds = manager.GetAllAdsForMyAccount(lister.Id),
+                AllAds = manager.GetAllAds(),
                 Lister = lister
             };
 
