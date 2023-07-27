@@ -1,0 +1,26 @@
+﻿@using SimpleAd_withAuth.data
+@model AdViewModel
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        @foreach (Ad ad in Model.AllAds)
+        {
+            <div class="bg-light rounded-3 p-5 mt-3">
+
+                <h5>Listed by @ad.Name</h5>
+                <h5>Listed on @ad.ListingDate.ToLongDateString()</h5>
+                <h5>Phone Number: @ad.PhoneNumber</h5>
+                <h3>Details:</h3>
+                <p>@ad.Listing</p>
+
+                @if (ad.Delete)
+                {
+                    <form method="post" action="/home/deletead">
+                        <input type="hidden" name="id" value="@ad.Id" />
+                        <button class="btn btn-danger">delete</button>
+                    </form>
+                }
+            </div>
+        }
+    </div>
+</div>
