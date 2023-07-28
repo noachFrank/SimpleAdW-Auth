@@ -32,6 +32,7 @@ namespace SimpleAd_withAuth.web.Controllers
             return View(vm);
         }
 
+        [Authorize]
         public IActionResult NewAd()
         {
             if (!User.Identity.IsAuthenticated)
@@ -42,6 +43,7 @@ namespace SimpleAd_withAuth.web.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult NewAd(Ad ad)
         {
@@ -75,6 +77,7 @@ namespace SimpleAd_withAuth.web.Controllers
             return View(vm);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult DeleteAd(int id)
         {

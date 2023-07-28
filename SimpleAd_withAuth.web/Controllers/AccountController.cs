@@ -52,7 +52,7 @@ namespace SimpleAd_withAuth.web.Controllers
             };
             HttpContext.SignInAsync(new ClaimsPrincipal(new ClaimsIdentity(claims, "Cookies", "lister", "role"))).Wait();
 
-
+            ViewBag.Lister = lister.Name;
 
             return Redirect("/home/newad");
         }
